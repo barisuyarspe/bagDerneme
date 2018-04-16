@@ -16,16 +16,20 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         createBlockChain()
+        print(barCoin.getBalanceOfAddress(address: "AnaAdres"))
+        barCoin.minePendingTransactions(miningRewardAddress: "AnaAdres")
+        print(barCoin.getBalanceOfAddress(address: "AnaAdres"))
+        barCoin.minePendingTransactions(miningRewardAddress: "AnaAdres")
+        print(barCoin.getBalanceOfAddress(address: "AnaAdres"))
         print(barCoin.isChainValid())
-//        barCoin.chain[1].data = "değiştirildi"
-//        print(barCoin.isChainValid())
+        barCoin.minePendingTransactions(miningRewardAddress: "AnaAdres")
+        print(barCoin.getBalanceOfAddress(address: "AnaAdres"))
     }
 
     func createBlockChain() {
-        print("first block mining..")
-        barCoin.addBlock(block: Block(time: Date(), data: "İkinci"))
-        print("second block mining..")
-        barCoin.addBlock(block: Block(time: Date(), data: "Üçüncü"))
+        barCoin.createTransaction(transaction: Transaction(fromAddress: "BirinciAdres", toAddress: "İkinciAdres", amount: 5))
+        barCoin.createTransaction(transaction: Transaction(fromAddress: "ÜçüncüAdress", toAddress: "BirinciAdres", amount: 3))
+        barCoin.minePendingTransactions(miningRewardAddress: "AnaAdres")
     }
 }
 

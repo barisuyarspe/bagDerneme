@@ -10,28 +10,37 @@ import Foundation
 import CryptoSwift
 
 class Block {
-    var index: Int?
     var timestamp: Date?
-    var data: String?
+    var transactions: [Transaction]?
     var previousHash: String?
     var hash: String?
     var nonce = 0
     
-    init(time: Date?, data: String?) {
+    init(time: Date?, transactions: [Transaction]?) {
         self.timestamp = time
-        self.data = data
+        self.transactions = transactions
     }
     
-    init(index: Int?, time: Date?, data: String?, previous: String?) {
+    init(time: Date?, transactions: [Transaction]?, previous: String?) {
         self.timestamp = time
-        self.data = data
-        self.index = index
+        self.transactions = transactions
         self.previousHash = previous
         self.hash = self.calculateHash()
     }
     
     func calculateHash() -> String {
-        let hashableString = "\(String(describing: self.index))" + "\(String(describing: self.timestamp))" + self.data! + self.previousHash! + "\(self.nonce)"
+        var hashableString = "\(String(describing: self.timestamp))" + self.previousHash! + "\(self.nonce)"
+        for transaction in self.transactions! {
+            if let fromAddress = transaction.fromAddress {
+                hashableString = hashableString + fromAddress
+            }
+            if let toAddress = transaction.toAddress {
+                hashableString = hashableString + toAddress
+            }
+            if let amount = transaction.amount {
+                hashableString = hashableString + "\(amount)"
+            }
+        }
         return hashableString.sha256()
     }
     

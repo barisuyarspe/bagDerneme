@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F0F15F120852634002F88D7 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0F15F020852634002F88D7 /* Transaction.swift */; };
 		5F17367020839F17004B53AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F17366F20839F17004B53AF /* AppDelegate.swift */; };
 		5F17367220839F17004B53AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F17367120839F17004B53AF /* ViewController.swift */; };
 		5F17367520839F17004B53AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F17367320839F17004B53AF /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F0F15F020852634002F88D7 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		5F17366C20839F17004B53AF /* BagDeneme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BagDeneme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F17366F20839F17004B53AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F17367120839F17004B53AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				5FE0D6332083A22B0071B8FA /* Block.swift */,
 				5FE0D6352083A3C80071B8FA /* Chain.swift */,
 				5FE0D6372083CE260071B8FA /* Extension.swift */,
+				5F0F15F020852634002F88D7 /* Transaction.swift */,
 			);
 			path = BagDeneme;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			files = (
 				5FE0D6382083CE260071B8FA /* Extension.swift in Sources */,
 				5FE0D6342083A22B0071B8FA /* Block.swift in Sources */,
+				5F0F15F120852634002F88D7 /* Transaction.swift in Sources */,
 				5FE0D6362083A3C80071B8FA /* Chain.swift in Sources */,
 				5F17367220839F17004B53AF /* ViewController.swift in Sources */,
 				5F17367020839F17004B53AF /* AppDelegate.swift in Sources */,
