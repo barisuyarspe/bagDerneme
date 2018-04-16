@@ -7,19 +7,25 @@
 //
 
 import UIKit
+import CryptoSwift
 
 class ViewController: UIViewController {
 
+    let barCoin = Chain()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        createBlockChain()
+        print(barCoin.isChainValid())
+//        barCoin.chain[1].data = "değiştirildi"
+//        print(barCoin.isChainValid())
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func createBlockChain() {
+        print("first block mining..")
+        barCoin.addBlock(block: Block(time: Date(), data: "İkinci"))
+        print("second block mining..")
+        barCoin.addBlock(block: Block(time: Date(), data: "Üçüncü"))
     }
-
-
 }
 
